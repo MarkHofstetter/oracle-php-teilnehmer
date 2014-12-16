@@ -1,3 +1,8 @@
+<head>
+<link rel="stylesheet" type="text/css" 
+  href="bootstrap/dist/css/bootstrap.min.css">
+</head>
+
 <?php
 /*
 ein formular auf dem wir neue einträge in 
