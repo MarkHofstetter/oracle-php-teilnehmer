@@ -1,1 +1,1 @@
-Hallo Africa
+Hallo Amerika
