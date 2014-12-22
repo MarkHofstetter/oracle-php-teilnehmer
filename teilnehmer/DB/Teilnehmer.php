@@ -46,7 +46,6 @@ class DB_Teilnehmer extends DB {
     oci_bind_by_name($q, ":tln_name",  $name );		  
 
     $r = oci_execute($q, OCI_DEFAULT);
-
     
 	$row = oci_fetch_array($q, OCI_ASSOC);
     $this->setName($row['TLN_NAME']);
