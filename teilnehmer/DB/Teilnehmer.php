@@ -35,4 +35,27 @@ class DB_Teilnehmer extends DB {
 	 $this->birthday = $value;
   }
   
+  function readByName($name) {
+    $q = oci_parse($this->db, 
+      "select tln_name, 
+          to_char(tln_birthday, 'yyyy-mm-dd') birthday,
+		  tln_height,
+		  tln_gen_id		  
+		  from teilnehmer where tln_name = :tln_name");
+
+    oci_bind_by_name($q, ":tln_name",  $name );		  
+
+    $r = oci_execute($q, OCI_DEFAULT);
+
+    
+	$row = oci_fetch_array($q, OCI_ASSOC);
+    $this->setName($row['TLN_NAME']);
+	$this->setBirthday(
+	   DateTime::createFromFormat('Y-m-d', $row['BIRTHDAY']));
+    $this->setHeight($row['TLN_HEIGHT']);
+	$gender = new DB_Gender;
+	$gender->readById($row['TLN_GEN_ID']);
+	$this->setGender($gender);
+    
+  }
 }
