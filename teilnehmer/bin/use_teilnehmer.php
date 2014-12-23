@@ -3,8 +3,10 @@ require_once('DB/Teilnehmer.php');
 require_once('DB/Gender.php');
 
 //new macht neues Objekt oder Instanz
-
 $teilnehmer=new DB_Teilnehmer;
+
+
+
 $teilnehmer->setName('Mark');
 $teilnehmer->setHeight(174);
 
