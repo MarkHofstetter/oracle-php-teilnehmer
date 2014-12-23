@@ -1,9 +1,13 @@
 <?php
 
+
+require_once('Config.php');
 require_once('DB/Teilnehmer.php');
 require_once('DB/Gender.php');
 
-$teilnehmer = new DB_Teilnehmer;
+$config = new Config;
+
+$teilnehmer = new DB_Teilnehmer($config);
 
 $teilnehmer->readByName('Mark');
 

@@ -28,7 +28,7 @@ class DB_Teilnehmer extends DB {
   }
   
   function getBirthdayAsString() {
-     return $this->birthday->format($this->dateformat);
+     return $this->birthday->format($this->config->dateformat);
   }
   
   function setBirthday(DateTime $value) {     
@@ -36,7 +36,7 @@ class DB_Teilnehmer extends DB {
   }
   
   function readByName($name) {
-    $q = oci_parse($this->db, 
+    $q = oci_parse($this->config->db, 
       "select tln_name, 
           to_char(tln_birthday, 'yyyy-mm-dd') birthday,
 		  tln_height,
@@ -52,7 +52,7 @@ class DB_Teilnehmer extends DB {
 	$this->setBirthday(
 	   DateTime::createFromFormat('Y-m-d', $row['BIRTHDAY']));
     $this->setHeight($row['TLN_HEIGHT']);
-	$gender = new DB_Gender;
+	$gender = new DB_Gender($this->config);
 	$gender->readById($row['TLN_GEN_ID']);
 	$this->setGender($gender);
     
