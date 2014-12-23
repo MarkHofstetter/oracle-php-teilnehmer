@@ -6,7 +6,7 @@ class DB_Gender extends DB {
 
   # gender lesen
   function readById($id) {
-    $q = oci_parse($this->db, 
+    $q = oci_parse($this->config->db, 
 	               "select gen_id,                     
                            gen_name
          			from gender where gen_id = :gen_id");
