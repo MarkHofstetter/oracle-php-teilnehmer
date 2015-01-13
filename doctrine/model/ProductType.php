@@ -1,5 +1,5 @@
 <?php
-use Doctrine\Common\Collections\ArrayCollections;
+# use Doctrine\Common\Collections\ArrayCollections;
 require_once('DBparent.php');
 /**
  * @Entity @Table(name="product_types")
@@ -16,7 +16,7 @@ class ProductType extends DBparent
 		
 	
 	public function __construct() {
-	  $this->products = new ArrayCollection();
+	#  $this->products = new ArrayCollection();
     }	
 	
     public function getName()

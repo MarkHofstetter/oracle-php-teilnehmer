@@ -2,9 +2,18 @@
 
 require_once('bootstrap.php');
 		
-$producttype = $entityManager->getRepository('ProductType')
-            ->findOneBy(array('name' => 'Obst', ));
-						
+#$producttype = $entityManager->getRepository('ProductType')
+#            ->findOneBy(array('name' => 'Obst', ));
+
+$producttypes = $entityManager->getRepository('ProductType')->findAll();
+            # ->findOneBy(array('name' => 'Obst', ));
+
+/*						
 foreach ($producttype->getProducts() as $product) {
   print $product->getName() ."\n";
+}
+*/
+
+foreach ($producttypes as $pt) {
+  print $pt->getName() ."\n";
 }

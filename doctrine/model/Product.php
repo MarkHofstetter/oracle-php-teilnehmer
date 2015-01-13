@@ -1,5 +1,5 @@
 <?php
-use Doctrine\Common\Collections\ArrayCollections;
+# use Doctrine\Common\Collections\ArrayCollections;
 require_once('DBparent.php');
 // model/Product.php
 /**

@@ -3,7 +3,7 @@
 require_once('bootstrap.php');
 
 $product = $entityManager->getRepository('Product')
-            ->findOneBy(array('name' => 'Banane', 
+            ->findOneBy(array('name' => 'Apfel', 
 			                 ));
 			
 $producttype = $entityManager->getRepository('ProductType')
