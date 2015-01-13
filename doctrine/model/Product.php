@@ -16,8 +16,9 @@ class Product extends DBParent
     protected $pcomment;
 
 	/**
-     * @ManyToOne(targetEntity="ProductType", inversedBy="productTypes")
+     * @ManyToOne(targetEntity="ProductType")
     **/
+	# inversedBy="productTypes"
 	protected $ProductType;
 
     public function getName()

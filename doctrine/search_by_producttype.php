@@ -7,4 +7,10 @@ $producttype = $entityManager->getRepository('ProductType')
 
 foreach ($producttype->getProducts() as $product) {
   print $product->getName() ."\n";
+  
+$product = $entityManager->getRepository('Product')
+               ->findOneBy(array('name' => 'Apfel',));
+
+printf("%s %s\n", $product->getPcomment(),
+                  $product->getProductType()->getName());		
 }
