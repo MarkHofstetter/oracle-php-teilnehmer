@@ -14,10 +14,10 @@ class Product extends DBparent
     protected $pcomment;
 	
 	/**
-	* @ManyToOne(targetEntity="ProductType", inversedBy="product_types")
+	* @ManyToOne(targetEntity="ProductType")
 	*/
 	protected $ProductType;
-		
+#inversedBy="product_types"		
     public function getName()
     {
         return $this->name;
