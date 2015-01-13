@@ -66,11 +66,6 @@ class User extends DBParent
         return $this->interests;
     }
 
-    public function setInterests($value)
-    {
-        $this->interests = $value;
-    }
-
     public function addInterest(Interest $interest)
     {
         $interest->addUser($this); // synchronously updating inverse side
